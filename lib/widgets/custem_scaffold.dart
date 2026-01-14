@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sipnudge_machine_task/theme/app_colors.dart';
+import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
 
 class CustemScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;

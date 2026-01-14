@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sipnudge_machine_task/cubit/navigation_cubit.dart';
+import 'package:sipnudge_machine_task/screens/main_screen.dart';
 import 'package:sipnudge_machine_task/widgets/custem_scaffold.dart';
-import 'theme/app_theme.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,24 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'SipNudge',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.main,
-      home: const MyHomePage(title: 'SipNudge Home'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return CustemScaffold(
-      appBar: AppBar(title: Text(title)),
-      body: const Center(child: Text('Initialize Theme')),
+    return BlocProvider(
+      create: (context) => NavigationCubit(),
+      child: MaterialApp(
+        title: 'SipNudge',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.main,
+        home: MainScreen(),
+      ),
     );
   }
 }
