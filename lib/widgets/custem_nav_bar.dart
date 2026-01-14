@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
-import 'package:sipnudge_machine_task/core/theme/app_typography.dart';
 import 'package:sipnudge_machine_task/cubit/navigation_cubit.dart';
 import 'package:sipnudge_machine_task/widgets/nav_border.dart';
 import 'package:sipnudge_machine_task/widgets/nav_item.dart';
