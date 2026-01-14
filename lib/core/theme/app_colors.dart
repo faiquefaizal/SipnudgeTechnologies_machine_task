@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primaryColor = Color.fromRGBO(146, 116, 152, 1);
+  static const Color primaryColor = Color.fromRGBO(168, 100, 223, 1);
   static const Color bgGradientTop = Color.fromRGBO(181, 134, 190, 1.0);
   static const Color bgGradientBottom = Color.fromRGBO(19, 19, 19, 1);
   static const Color navColor = Color.fromRGBO(43, 37, 54, 1);
@@ -11,4 +11,7 @@ class AppColors {
   static const Color navBorderGradientBottom = Color.fromRGBO(63, 63, 63, 1);
 
   static const Color inactivecolor = Color.fromRGBO(255, 255, 255, 0.5);
+  static const Color analysisBg = Color.fromRGBO(144, 115, 150, 1);
+
+  static const Color arrowColor = Colors.white70;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
 
 class AppTypography {
   // The base font configuration
@@ -21,10 +22,19 @@ class AppTypography {
     Colors.white54,
   );
 
-  // Chart Titles
-  static TextStyle sectionHeader = _baseUrbanist(
+  // Analysis Header: Tab Text
+  static TextStyle tabText(bool isSelected) {
+    return _baseUrbanist(
+      16,
+      FontWeight.w700,
+      isSelected ? Colors.white : Colors.black,
+    );
+  }
+
+  // Analysis Header: Date Range
+  static TextStyle dateRangeHeader = _baseUrbanist(
     18,
-    FontWeight.w700,
+    FontWeight.w600,
     Colors.white,
   );
 }

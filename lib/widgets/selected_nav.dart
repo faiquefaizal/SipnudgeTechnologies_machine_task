@@ -13,7 +13,8 @@ class SelectedNav extends StatelessWidget {
     return NavBorder(
       margin: EdgeInsets.symmetric(horizontal: 4),
       borderRadius: BorderRadius.circular(30),
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
         margin: EdgeInsets.all(1),
         height: 60,
         padding: EdgeInsets.symmetric(horizontal: 23),
