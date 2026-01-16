@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
 import 'package:sipnudge_machine_task/core/theme/app_typography.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_state.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_state.dart';
 import 'package:sipnudge_machine_task/widgets/build_legend.dart';
 import 'package:sipnudge_machine_task/widgets/hydration_empty_state.dart';
 
@@ -30,7 +30,6 @@ class HydrationSourceCard extends StatelessWidget {
 
           Row(
             children: [
-              // Donut Chart
               SizedBox(
                 height: 120,
                 width: 120,
@@ -42,7 +41,7 @@ class HydrationSourceCard extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            "100%", // Ideally this represents the completion of the daily goal, but design shows "100%"
+                            "100%",
                             style: AppTypography.displayLarge.copyWith(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
@@ -62,7 +61,6 @@ class HydrationSourceCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 10),
-              // Legend
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

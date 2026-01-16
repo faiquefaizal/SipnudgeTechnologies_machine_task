@@ -28,7 +28,6 @@ class CustomScaffold extends StatelessWidget {
       extendBodyBehindAppBar: true,
       extendBody: true,
       floatingActionButton: floatingActionButton,
-      // floatingActionButtonLocation: floatingActionButtonLocation,
       bottomNavigationBar: bottomNavigationBar,
       resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       body: SizedBox.expand(

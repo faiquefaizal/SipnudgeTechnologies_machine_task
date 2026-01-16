@@ -9,6 +9,7 @@ import 'package:sipnudge_machine_task/widgets/chart_bottom_title_widget.dart';
 
 import 'package:sipnudge_machine_task/models/hydration_data.dart';
 
+/// Widget for rendering the hydration data as a line chart.
 class LineChartGraph extends StatelessWidget {
   final List<DailyHydrationData> data;
 
@@ -94,7 +95,7 @@ class LineChartGraph extends StatelessWidget {
                   );
                 }).toList(),
                 isCurved: true,
-                color: AppColors.activePurple, // Line color
+                color: AppColors.activePurple,
                 barWidth: 3,
                 isStrokeCapRound: true,
                 dotData: FlDotData(
@@ -143,7 +144,7 @@ class LineChartGraph extends StatelessWidget {
           reservedSize: 40,
           interval: 0.2,
           getTitlesWidget: (value, meta) {
-            if (value > 1.0) return const SizedBox(); // don't show above 100%
+            if (value > 1.0) return const SizedBox();
             return SideTitleWidget(
               meta: meta,
               child: Text(

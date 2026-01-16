@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_state.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_state.dart';
 
 class PieGraph extends StatelessWidget {
   final AnalysisState state;
@@ -23,14 +23,14 @@ class PieGraph extends StatelessWidget {
             ),
             value: state.waterPercentage.toDouble(),
             title: '',
-            radius: 8, // thin ring
+            radius: 8,
             showTitle: false,
           ),
           PieChartSectionData(
             color: AppColors.foodGreen,
             value: state.foodPercentage.toDouble(),
             title: '',
-            radius: 8, // thin ring
+            radius: 8,
             showTitle: false,
           ),
         ],

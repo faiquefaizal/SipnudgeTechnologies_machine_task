@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
 import 'package:sipnudge_machine_task/core/theme/app_typography.dart';
 import 'package:sipnudge_machine_task/core/utile/date_formatter.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_cubit.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_state.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_cubit.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_state.dart';
 import 'analysis_tab_item.dart';
 
 class AnalysisHeader extends StatelessWidget {

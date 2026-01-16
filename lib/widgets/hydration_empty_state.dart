@@ -11,7 +11,7 @@ class HydrationEmptyState extends StatelessWidget {
     return CustomCard(
       child: Container(
         padding: const EdgeInsets.all(20),
-        height: 200, // Matching the height of the card content roughly
+        height: 200,
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

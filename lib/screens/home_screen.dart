@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_cubit.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_state.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_cubit.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_state.dart';
 import 'package:sipnudge_machine_task/cubit/chart_type_cubit.dart';
 
 import 'package:sipnudge_machine_task/widgets/custom_scaffold.dart';
@@ -23,9 +23,7 @@ class HomeScreen extends StatelessWidget {
             child: BlocBuilder<AnalysisCubit, AnalysisState>(
               builder: (context, state) {
                 return SingleChildScrollView(
-                  padding: const EdgeInsets.only(
-                    bottom: 120,
-                  ), // Add padding for Nav Bar
+                  padding: const EdgeInsets.only(bottom: 120),
                   child: Column(
                     children: [
                       const AnalysisHeader(),

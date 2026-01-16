@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// centralized source for all text styles used in the application.
+///
+/// Uses 'Urbanist' Google Font as the base.
 class AppTypography {
-  // The base font configuration
   static TextStyle _baseUrbanist(double size, FontWeight weight, Color color) {
     return GoogleFonts.urbanist(
       fontSize: size,
@@ -11,17 +13,16 @@ class AppTypography {
     );
   }
 
-  // Navbar: Active State
+  /// Style for active navigation items.
   static TextStyle navActive = _baseUrbanist(15, FontWeight.w600, Colors.white);
 
-  // Navbar: Inactive State
+  /// Style for inactive navigation items.
   static TextStyle navInactive = _baseUrbanist(
     11,
     FontWeight.w500,
     Colors.white54,
   );
 
-  // Analysis Header: Tab Text
   static TextStyle tabText(bool isSelected) {
     return _baseUrbanist(
       16,
@@ -30,7 +31,6 @@ class AppTypography {
     );
   }
 
-  // Analysis Header: Date Range
   static TextStyle dateRangeHeader = _baseUrbanist(
     18,
     FontWeight.w600,

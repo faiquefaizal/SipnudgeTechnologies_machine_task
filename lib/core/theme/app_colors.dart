@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Centralized source for all application colors.
+///
+/// Contains definitions for primary brands, gradients, charts, and utility colors.
 class AppColors {
   static const Color primaryColor = Color.fromRGBO(168, 100, 223, 1);
   static const Color bgGradientTop = Color.fromRGBO(181, 134, 190, 1.0);
@@ -15,17 +18,10 @@ class AppColors {
 
   static const Color arrowColor = Colors.white70;
 
-  // Chart Colors
-  static const Color chartBg = Color(
-    0xFF7D5F8A,
-  ); // Slightly darker/adjusted purple
-  static const Color chartBarDefault = Color.fromRGBO(
-    131,
-    69,
-    170,
-    1,
-  ); // Darker purple bar
-  static const Color chartBarSelected = Color(0xFFAB57FF); // Bright neon purple
+  /// The background color for chart containers.
+  static const Color chartBg = Color(0xFF7D5F8A);
+  static const Color chartBarDefault = Color.fromRGBO(131, 69, 170, 1);
+  static const Color chartBarSelected = Color(0xFFAB57FF);
   static const Color chartTooltipBg = Colors.white;
 
   static const Color waterLinertop = Color.fromRGBO(142, 198, 249, 1);

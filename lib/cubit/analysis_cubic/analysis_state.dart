@@ -1,7 +1,10 @@
 import 'package:sipnudge_machine_task/models/hydration_data.dart';
 
+/// State management for the Analysis feature.
+///
+/// Holds the current time interval, selected date, and the filtered list of hydration data.
 class AnalysisState {
-  final String selectedInterval; // "Weekly" or "Monthly"
+  final String selectedInterval;
   final DateTime currentDate;
   final List<DailyHydrationData> hydrationList;
 
@@ -11,12 +14,13 @@ class AnalysisState {
     required this.hydrationList,
   });
 
-  // Getters for the Donut Chart (Math happens here automatically)
+  /// Calculates the total water intake from the [hydrationList].
   double get totalWater =>
       hydrationList.fold(0, (sum, item) => sum + item.waterLiters);
   double get totalFood =>
       hydrationList.fold(0, (sum, item) => sum + item.foodLiters);
 
+  /// Calculates the percentage of total intake that comes from water.
   int get waterPercentage {
     final total = totalWater + totalFood;
     if (total == 0) return 0;

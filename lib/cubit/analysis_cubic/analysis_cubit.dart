@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sipnudge_machine_task/core/utile/list_generate.dart';
-import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_state.dart';
+import 'package:sipnudge_machine_task/data/mock_data.dart';
+import 'package:sipnudge_machine_task/cubit/analysis_state.dart';
 import 'package:sipnudge_machine_task/models/hydration_data.dart';
 
+/// Cubit responsible for managing the analysis state and filtering hydration data.
 class AnalysisCubit extends Cubit<AnalysisState> {
   final List<DailyHydrationData> _masterList = generate365Days();
 
@@ -10,13 +11,16 @@ class AnalysisCubit extends Cubit<AnalysisState> {
     : super(
         AnalysisState(
           selectedInterval: "Weekly",
-          currentDate: DateTime(2024, 1, 1), // Starting point
+          currentDate: DateTime(2024, 1, 1),
           hydrationList: [],
         ),
       ) {
-    _filterData(); // Load first week on start
+    _filterData();
   }
 
+  /// Filters the master hydration list based on the selected [interval] and [currentDate].
+  ///
+  /// Supports "Yearly", "Monthly", and "Weekly" intervals.
   void _filterData() {
     final anchor = state.currentDate;
     final interval = state.selectedInterval;
@@ -61,13 +65,10 @@ class AnalysisCubit extends Cubit<AnalysisState> {
       }
       emit(state.copyWith(hydrationList: monthlyAggregated));
     } else if (interval == "Monthly") {
-      // Calendar Month
       start = DateTime(anchor.year, anchor.month, 1);
-      // Last day of month logic: Next month 1st minus 1 day
+
       final nextMonth = DateTime(anchor.year, anchor.month + 1, 1);
-      end = nextMonth.subtract(
-        const Duration(seconds: 1),
-      ); // Last moment of current month
+      end = nextMonth.subtract(const Duration(seconds: 1));
 
       final filtered = _masterList.where((item) {
         return item.date.isAfter(start.subtract(const Duration(seconds: 1))) &&
@@ -75,8 +76,6 @@ class AnalysisCubit extends Cubit<AnalysisState> {
       }).toList();
       emit(state.copyWith(hydrationList: filtered));
     } else {
-      // Weekly: Mon - Sun
-      // Find previous Monday (or today if Monday)
       final int daysSinceMonday = anchor.weekday - 1;
       start = DateTime(
         anchor.year,
@@ -96,6 +95,7 @@ class AnalysisCubit extends Cubit<AnalysisState> {
     }
   }
 
+  /// Moves the current date forward by one unit of the selected interval (Year, Month, or Week).
   void next() {
     final interval = state.selectedInterval;
     if (interval == "Yearly") {
@@ -118,7 +118,6 @@ class AnalysisCubit extends Cubit<AnalysisState> {
         ),
       );
     } else {
-      // Weekly
       emit(
         state.copyWith(
           currentDate: state.currentDate.add(const Duration(days: 7)),
@@ -159,6 +158,7 @@ class AnalysisCubit extends Cubit<AnalysisState> {
     _filterData();
   }
 
+  /// Updates the selected interval and refreshes the data.
   void updateInterval(String interval) {
     emit(state.copyWith(selectedInterval: interval));
     _filterData();

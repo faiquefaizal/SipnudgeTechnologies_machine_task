@@ -8,6 +8,7 @@ import 'package:sipnudge_machine_task/cubit/chart_touch_cubit.dart';
 import 'package:sipnudge_machine_task/widgets/chart_bottom_title_widget.dart';
 import 'package:sipnudge_machine_task/models/hydration_data.dart';
 
+/// Widget for rendering the hydration data as a bar chart.
 class BarChartGraph extends StatelessWidget {
   final List<DailyHydrationData> data;
 
@@ -84,7 +85,7 @@ class BarChartGraph extends StatelessWidget {
           reservedSize: 40,
           interval: 0.2,
           getTitlesWidget: (value, meta) {
-            if (value > 1.0) return const SizedBox(); // don't show above 100%
+            if (value > 1.0) return const SizedBox();
             return SideTitleWidget(
               meta: meta,
               child: Text(
@@ -106,15 +107,11 @@ class BarChartGraph extends StatelessWidget {
       final dayData = entry.value;
       final isTouched = index == touchedIndex;
 
-      // Adjust bar width based on density
-      // 7 days -> wide (32)
-      // 12 months -> medium (20)
-      // 30 days -> thin (8)
       double barWidth = 30;
       if (data.length > 20) {
-        barWidth = 6; // Monthly
+        barWidth = 6;
       } else if (data.length > 10) {
-        barWidth = 16; // Yearly
+        barWidth = 16;
       }
 
       return BarChartGroupData(
