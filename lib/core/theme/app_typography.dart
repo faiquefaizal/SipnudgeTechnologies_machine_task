@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
 
 class AppTypography {
   // The base font configuration
@@ -35,6 +34,22 @@ class AppTypography {
   static TextStyle dateRangeHeader = _baseUrbanist(
     18,
     FontWeight.w600,
+    Colors.white,
+  );
+
+  static TextStyle cardTitle = _baseUrbanist(20, FontWeight.w700, Colors.black);
+
+  static TextStyle labelSmall = _baseUrbanist(12, FontWeight.w500, Colors.grey);
+
+  static TextStyle displayLarge = _baseUrbanist(
+    28,
+    FontWeight.bold,
+    Colors.white,
+  );
+
+  static TextStyle bodySmall = _baseUrbanist(
+    14,
+    FontWeight.normal,
     Colors.white,
   );
 }

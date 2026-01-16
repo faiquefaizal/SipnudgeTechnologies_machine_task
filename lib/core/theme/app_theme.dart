@@ -16,6 +16,12 @@ class AppTheme {
       ),
 
       textTheme: GoogleFonts.urbanistTextTheme(),
+
+      cardTheme: CardThemeData(
+        color: AppColors.analysisBg,
+        elevation: 10,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      ),
     );
   }
 }

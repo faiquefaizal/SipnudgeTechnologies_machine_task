@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sipnudge_machine_task/core/theme/app_colors.dart';
 import 'package:sipnudge_machine_task/core/theme/app_typography.dart';
+import 'package:sipnudge_machine_task/core/utile/date_formatter.dart';
 import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_cubit.dart';
 import 'package:sipnudge_machine_task/cubit/analysis_cubic/cubit/analysis_state.dart';
 import 'analysis_tab_item.dart';
@@ -48,7 +49,7 @@ class AnalysisHeader extends StatelessWidget {
                   Expanded(
                     child: IconButton(
                       alignment: Alignment.centerLeft,
-                      onPressed: () => cubit.previousDate(),
+                      onPressed: () => cubit.previous(),
                       icon: const Icon(
                         Icons.arrow_back_ios_new,
                         color: AppColors.arrowColor,
@@ -60,7 +61,10 @@ class AnalysisHeader extends StatelessWidget {
                     flex: 4,
                     child: Center(
                       child: Text(
-                        state.dateLabel,
+                        DateFormatter.formatDateLabel(
+                          state.currentDate,
+                          state.selectedInterval,
+                        ),
                         style: AppTypography.dateRangeHeader,
                       ),
                     ),
@@ -68,7 +72,7 @@ class AnalysisHeader extends StatelessWidget {
                   Expanded(
                     child: IconButton(
                       alignment: Alignment.centerRight,
-                      onPressed: () => cubit.nextDate(),
+                      onPressed: () => cubit.next(),
                       icon: const Icon(
                         Icons.arrow_forward_ios,
                         color: AppColors.arrowColor,

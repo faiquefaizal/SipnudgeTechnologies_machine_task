@@ -21,7 +21,7 @@ class AnalysisTabItem extends StatelessWidget {
         onTap: onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          padding: const EdgeInsets.symmetric(vertical: 12),
+          padding: const EdgeInsets.symmetric(vertical: 7),
           decoration: BoxDecoration(
             color: isSelected ? AppColors.primaryColor : Colors.transparent,
             borderRadius: BorderRadius.circular(30),

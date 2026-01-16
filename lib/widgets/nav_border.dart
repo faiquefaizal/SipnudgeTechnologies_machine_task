@@ -16,9 +16,9 @@ class NavBorder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
-
       decoration: BoxDecoration(
         borderRadius: borderRadius,
+
         gradient: const LinearGradient(
           colors: [
             AppColors.navBorderGradientTop,

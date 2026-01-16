@@ -14,4 +14,25 @@ class AppColors {
   static const Color analysisBg = Color.fromRGBO(144, 115, 150, 1);
 
   static const Color arrowColor = Colors.white70;
+
+  // Chart Colors
+  static const Color chartBg = Color(
+    0xFF7D5F8A,
+  ); // Slightly darker/adjusted purple
+  static const Color chartBarDefault = Color.fromRGBO(
+    131,
+    69,
+    170,
+    1,
+  ); // Darker purple bar
+  static const Color chartBarSelected = Color(0xFFAB57FF); // Bright neon purple
+  static const Color chartTooltipBg = Colors.white;
+
+  static const Color waterLinertop = Color.fromRGBO(142, 198, 249, 1);
+  static const Color waterLinerbottom = Color.fromRGBO(16, 75, 128, 1);
+  static const Color foodGreen = Color.fromRGBO(129, 204, 114, 1);
+  static const Color waterblue = Color.fromRGBO(54, 159, 255, 1);
+
+  static const Color activePurple = Color(0xFF9C47E3);
+  static const Color tooltipText = Color(0xFF333333);
 }
